@@ -1,0 +1,154 @@
+* {
+	border: none;
+	border-radius: 5;
+  font-family: "JetbrainsMono Nerd Font" ;
+	font-size: 15px;
+	min-height: 10px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#window {
+	margin-top: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+	transition: none;
+  color: transparent;
+	background: transparent;
+}
+
+#pulseaudio {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	transition: none;
+	color: #1A1826;
+	background: #FAE3B0;
+}
+
+@keyframes blink {
+  to {
+    background-color: #BF616A;
+    color: #B5E8E0;
+  }
+}
+
+#backlight {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	transition: none;
+	color: #161320;
+	background: #F8BD96;
+}
+#clock {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	transition: none;
+	color: #161320;
+	background: #ABE9B3;
+}
+
+#memory {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	transition: none;
+	color: #161320;
+	background: #DDB6F2;
+}
+#cpu {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	transition: none;
+	color: #161320;
+	background: #96CDFB;
+}
+
+#custom-launcher {
+	font-size: 24px;
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 5px;
+	transition: none;
+  color: #89DCEB;
+  background: #161320;
+}
+
+#custom-power {
+	font-size: 20px;
+	margin-top: 6px;
+	margin-left: 8px;
+	margin-right: 8px;
+	padding-left: 10px;
+	padding-right: 5px;
+	margin-bottom: 0px;
+	transition: none;
+	color: #161320;
+	background: #F28FAD;
+}
+
+#custom-wallpaper {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+	transition: none;
+	color: #161320;
+	background: #C9CBFF;
+}
+
+
+#workspaces {
+  margin-top: 6px;
+}
+
+#workspaces button {
+  padding: 2px 5px;
+  margin: 2px 5px;
+  background: transparent;
+  color: white;
+}
+
+#workspaces button.focused {
+  background: #64727D;
+  border-bottom: 2px solid #5e5e5e;
+}
+
+#workspaces button.active {
+  color: black;
+  background-color: lightblue;
+}
+
+#pulseaudio-slider trough {
+  min-height: 2px;
+  min-width: 80px;
+  border-radius: 5px;
+  background-color: lightblue;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 80px;
+  border-radius: 5px;
+  background-color: transparent;
+}
