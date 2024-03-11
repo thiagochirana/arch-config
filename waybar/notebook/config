@@ -1,10 +1,11 @@
 {
 	"layer": "top",
-  "height": 15,
-	"modules-left": ["custom/launcher","cpu","memory","disk"],
+  "height": 3,
+	"modules-left": ["cpu","memory","disk", "hyprland/workspaces"],
 	"modules-center": ["clock"],
-	"modules-right": ["hyprland/workspaces","mpris","pulseaudio", "battery"],
-	
+	"modules-right": ["mpris","pulseaudio", "battery", "network"],
+	"reload_style_on_change": true,
+
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 5,
@@ -19,12 +20,6 @@
 		}
 	},
 
-  "pulseaudio/slider": {
-    "min": 0,
-    "max": 100,
-    "orientation": "horizontal"
-  },
-
   "river/tags": {
 		"num-tags": 6
   },
@@ -36,7 +31,8 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Desconectado ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "on-click": "iwgtk"
   },
  
   "battery": {
