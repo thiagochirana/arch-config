@@ -10,10 +10,12 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $terminal alacritty
+set $std_font JetBrainsMono Nerd Font
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:jetbrains-mono 8
+font pango:$std_font 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -49,10 +51,10 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec $terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -183,52 +185,48 @@ mode "resize" {
 
 # bindsym $mod+r mode "resize"
 
+
+set $c1_bg #2DF6C6
+set $c1_ft #093128
+set $c2_bg #02262E
+set $c2_ft #C5C5C5
+set $bar_bg #02262E
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#        status_command i3status
-#}
-
-# Colors
-set $c1_back "#2FBFF5"
-set $c1_text "#23434E"
-set $c1_bord "#2F37F5"
-set $c1_indc "#2F74F5"
-set $c1_chil ""
-
-set $c2_back "#53F5B0"
-set $c2_text "#0D4230"
-set $c2_bord "#3FBA85"
-set $c2_indc "#0D4230"
-set $c2_chil ""
-
-
-# class                 border  bground text    indicator child_border
-client.focused          #009913 #36FF00 #0D3E0A #BEFFC0   #4ED742
-client.focused_inactive #333333 #08500C #CAFFA0 #484E50   #5F676A
-client.unfocused        #0F2207 #273125 #626262 #292D2E   #222222
-client.urgent           #C09D31 #FFA73A #2F0403 #900000   #900000
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
-
-client.background       #FFFFFF
-
 bar {
-  colors {
-    background #000000
-    statusline #FFFFFF
-    separator  #00FF59
+        status_command i3status
+	font pango:$std_font 10
+	binding_mode_indicator no
+	
+	colors {
+    		background $bar_bg
+		    statusline #FFFFFF
+    		separator  $bar_bg
 
-    focused_workspace  #009913 #36FF00 #0D3E0A
-    active_workspace   #0D3E0A #0D3E0A #FFFFFF
-    inactive_workspace #072406 #222222 #888888
-    urgent_workspace   #C09D31 #FFA73A #5E0000
-    binding_mode       #C09D31 #FFA73A #5E0000
-  }
+    		focused_workspace  $c1_bg  $c1_bg  $c1_ft
+    		active_workspace   $c2_bg  $c2_bg  $c2_ft
+    		inactive_workspace $c2_bg  $c2_bg  #FFFFFF
+    		urgent_workspace   #2F343A #900000 #FFFFFF
+    		binding_mode       #2F343A #900000 #FFFFFF
+  	}
 }
 
 
-# binds personalizadas
+# class                 border  bground text    indicator child_border
+client.focused          $c1_bg  $c1_bg  #093128 $c1_bg    $c1_bg
+client.focused_inactive $c2_bg  $c2_bg  #C5C5C5 $c2_bg    $c2_bg
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #CD7E0E #CD7E0E #2F2121 #CD7E0E   #CD7E0E
+client.placeholder      #000000 #0C0C0C #B3B3B3 #000000   #0C0C0C
+
+client.background       #FFFFFF
+
+# binds personalizadas 
+
+bindsym $mod+p exec flameshot gui
 bindsym $mod+r exec rofi -show drun
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+d exec discord
 
+# End configs
