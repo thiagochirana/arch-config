@@ -21,6 +21,7 @@ font pango:$std_font 8
 #wallpaper
 exec --no-startup-id sh /opt/wall/tela.sh
 exec --no-startup-id feh --randomize --bg-fill /opt/wall/*.jpg
+bindsym $mod+$alt+b exec --no-startup-id feh /opt/wall/pics/* --recursive --randomize --bg-fill
 
 # Polybar
 exec --no-startup-id sh /home/chirana/.config/polybar/launch.sh
